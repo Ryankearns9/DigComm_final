@@ -43,7 +43,7 @@ https://pyrtlsdr.readthedocs.io/en/latest/
 ## Spur
 A spur refers to an unwanted frequency components caused by test equipment. These can have many causes such as aliasing, non-linearities, and ADC saturation. Saturation is specifically explored in the 
 
-#Results
+# Results
 The below section outlines the results of the project.
 
 ## Handheld Radio
