@@ -50,3 +50,12 @@ The below section outlines the results of the project.
 The below plot shows the frequency plot of the handheld radio.
 
 ![image](https://github.com/Ryankearns9/DigComm_final/blob/main/imgs/RationalResampler.PNG)
+
+As can be seen here, this spectrum has a significant number of spurs. After inspecting the time domain data, it is clear that saturation occured during measurement. This resulted in spurs occuring all throughout the signal. Future work should include retaking this data from a further distance to avoid saturating the antenna.
+
+Another spur of interest is the DC spur. This is a typical issue with ADCs and can be corrected for by removing the "average" from the data.
+
+### Waterfall
+The channelized output can be seen below. The spectrum was channelized 
+
+![image](https://github.com/Ryankearns9/DigComm_final/blob/main/imgs/RationalResampler.PNG)
