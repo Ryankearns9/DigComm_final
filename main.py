@@ -1,10 +1,11 @@
 from rtlsdr import RtlSdr
+import time
 
 if __name__ == "__main__":
     
     sdr = RtlSdr()
     
-    sdr.center_freq = 93e6
+    sdr.center_freq = 462.9e6
     sampe_rate = 6.4e6/2
     sdr.sample_rate = sampe_rate
     bytes_per_samp = 2
@@ -14,6 +15,8 @@ if __name__ == "__main__":
     recording_time = 3
 
     print(sdr.center_freq)
+    
+    time.sleep(5)
     
     print('Starting Recording...')
     data = sdr.read_bytes(recording_time*sampe_rate*bytes_per_samp)

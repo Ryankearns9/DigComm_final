@@ -69,6 +69,9 @@ The phase for this signal suggests we have not successfully basebaded the signal
 
 ![image](https://github.com/Ryankearns9/DigComm_final/blob/main/imgs/RockyTalkiePhase.png)
 
+### Demodulation
+As a result of the saturation effects, demodulation attempts have been unsuccessful. Future work will include retaking the data from a further distance to try and get a cleaner signal
+
 ## Broadcast Radio
 The below plot displays the spectrum when captured at 93 MHz. This spectrum is significantly cleaner than that seen in the previous section. Here we can clearly make out the main bulb of a FM waveform at 93.3MHz. This is clearly an FM waveform and will be targeted for this project.
 
@@ -84,10 +87,10 @@ By selecting our channel of interest, we see the FM waveform main bulb. This is 
 
 ![image](https://github.com/Ryankearns9/DigComm_final/blob/main/imgs/Broadcast_Channel.png)
 
-# Future Work
+### Demodulation
+Demodulation of the FM waveform has successfully been conducted. Audio quality is low. This is likely a result of over filtering the spectrum. Future work should include changing the filtering structure to recover better audio quality.
 
-## Demodulation
-This project has yet to successfully demodulate the waveform. All attempts have so far been unsuccessful. Retaking the data without saturating the ADC is likely to yeild much more successful results.
+# Future Work
 
 ## Real Time Analysis
 All code was built intending for real time analysis. C code was begin to this end. Unforunately, without the ability to demodulate, these efforts were paused until demodulation could be proven. Once successfully demodulating the waveform, this code will be updated to run in real time.
