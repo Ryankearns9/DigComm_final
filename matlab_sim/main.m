@@ -4,7 +4,7 @@ close all
 
 
 %% User Input
-radio_type = 1; % 0 FM radio, 1 Handheld Radio
+radio_type = 0; % 0 FM radio, 1 Handheld Radio
 
 
 %% Frequency definition
@@ -30,7 +30,7 @@ if radio_type
     
 
 else
-    f_center = 91.3e6; %Hz
+    f_center = 93e6; %Hz
     bw = 3.2e6;
     f_start = f_center - bw/2;
     f_end = f_center + bw/2;

@@ -49,13 +49,45 @@ The below section outlines the results of the project.
 ## Handheld Radio
 The below plot shows the frequency plot of the handheld radio.
 
-![image](https://github.com/Ryankearns9/DigComm_final/blob/main/imgs/RationalResampler.PNG)
+![image](https://github.com/Ryankearns9/DigComm_final/blob/main/imgs/rocky_spectrum.png)
 
 As can be seen here, this spectrum has a significant number of spurs. After inspecting the time domain data, it is clear that saturation occured during measurement. This resulted in spurs occuring all throughout the signal. Future work should include retaking this data from a further distance to avoid saturating the antenna.
 
 Another spur of interest is the DC spur. This is a typical issue with ADCs and can be corrected for by removing the "average" from the data.
 
 ### Waterfall
-The channelized output can be seen below. The spectrum was channelized 
+The channelized output can be seen below. The spectrum was channelized to 25kHz and downsampled to about 30kHz. As can be seen here, the DC tone is present in channel 1 and is the largest signal present. After the DC tone, is the tone in bin 117 with the tone in 39 following. The bin at 117 corresponds to the expected location of our signal while the bin at 39 appears to be spurious. We are confident that both tones are a result of our radio because the start and end time for the radio can be clearly seen at the beginning of the waterfall.
 
-![image](https://github.com/Ryankearns9/DigComm_final/blob/main/imgs/RationalResampler.PNG)
+![image](https://github.com/Ryankearns9/DigComm_final/blob/main/imgs/Waterfall_handheld.png)
+
+### Channelized Spectrum
+The below spectrum shows the channelized spectrum of our handheld radio. As can be seen, siginificant spurs still exist. These spurs have severly degraded our signal and may make it impossible to demodulate. The experiment will need to be redone without this saturation
+
+![image](https://github.com/Ryankearns9/DigComm_final/blob/main/imgs/RockyTalkieOutput.png)
+
+The phase for this signal suggests we have not successfully basebaded the signal of interest. An ideally basebanded signal should experience a constant phase rather than the increasing phase seen here.
+
+![image](https://github.com/Ryankearns9/DigComm_final/blob/main/imgs/RockyTalkiePhase.png)
+
+## Broadcast Radio
+The below plot displays the spectrum when captured at 93 MHz. This spectrum is significantly cleaner than that seen in the previous section. Here we can clearly make out the main bulb of a FM waveform at 93.3MHz. This is clearly an FM waveform and will be targeted for this project.
+
+![image](https://github.com/Ryankearns9/DigComm_final/blob/main/imgs/radio_spectrum.png)
+
+### Waterfall
+The channelized spectrum is shown below. The spectrum was split into 200kHz channels to target the FCC channelization scheme. This higher chanenl size results in a much lower resolution wateterfall curve but the channels can still be clearly identified. Our signal of interest is in channel 3 below:
+
+![image](https://github.com/Ryankearns9/DigComm_final/blob/main/imgs/waterfall_broadcast.png)
+
+### Channelized Spectrum
+By selecting our channel of interest, we see the FM waveform main bulb. This is the characteristic main lobe of an FM waveform and contains the majority of the energy and information. From here, we should be able to demodulate the information without issue of the adjacent channels or noise interfering with the demodulation process 
+
+![image](https://github.com/Ryankearns9/DigComm_final/blob/main/imgs/Broadcast_Channel.png)
+
+# Future Work
+
+## Demodulation
+This project has yet to successfully demodulate the waveform. All attempts have so far been unsuccessful. Retaking the data without saturating the ADC is likely to yeild much more successful results.
+
+## Real Time Analysis
+All code was built intending for real time analysis. C code was begin to this end. Unforunately, without the ability to demodulate, these efforts were paused until demodulation could be proven. Once successfully demodulating the waveform, this code will be updated to run in real time.
