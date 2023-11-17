@@ -5,7 +5,7 @@ if __name__ == "__main__":
     
     sdr = RtlSdr()
     
-    sdr.center_freq = 462.9e6
+    sdr.center_freq = 93e6
     sampe_rate = 6.4e6/2
     sdr.sample_rate = sampe_rate
     bytes_per_samp = 2

@@ -40,11 +40,11 @@ else
     chan_size = bw/n;
     
     % Get Taps
-    fid = fopen("filter_taps_bytes.h",'r');
+    fid = fopen("filter_taps_radio.h",'r');
     taps = fscanf(fid,'%d\n')';
     fclose(fid);
 
-    data_file = 'recorded_data_bytes_radio.txt';
+    data_file = 'recorded_data_bytes.txt';
     input_data = convert_2_IQ(data_file);
     target_chan = 3;
 
@@ -109,7 +109,7 @@ bb_filter = ChannelBasebandFilter;
 filtered_data = conv(target_data,bb_filter.Numerator,'same');
 
 %Grab phase of first detect
-demod_ang_diff = unwrap(angle(filtered_data))/(2*pi*1/(bw/m));
+demod_ang_diff = unwrap(angle(target_data))/(2*pi*1/(bw/m));
 demod_outpt = demod_ang_diff(2:end)-demod_ang_diff(1:end-1);
 
 demod_resampled = resample(demod_outpt,11025,round(bw/(2*m)));

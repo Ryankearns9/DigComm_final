@@ -33,7 +33,9 @@ This lab works to capture and demodulate one of these channels.
 ## Channelizations
 Channelization is the act of breaking a frequency spectrum into sub-frequency bands. This is similar to how a television chooses a "channel". Channelizers are specifically designed for FDMA waveforms and will typically choose channel sizes that are ideally suited for a specific waveform. In this case, 25kHz was chosen for the narrowband waveform and 200kHz is chosen for the wideband waveform.
 
-The typical channelizer structure can be thought of as a mixer, followed by a filter, then a downsampler. This lab uses a technique known as a "WOLA Channelizer" which efficently breaks the entire spectrum down into sub-frequency bins. This is detailed in great detail within "Channelizers and Reconstructors: A Design Guide" by Bradford Watson.
+The typical channelizer structure can be thought of as a mixer, followed by a filter, then a downsampler. This lab uses a technique known as a "WOLA Channelizer" which efficently breaks the entire spectrum down into sub-frequency bins. This is detailed in great detail within "Channelizers and Reconstructors: A Design Guide" by Bradford Watson. An overview of a channelizer can be seen below:
+
+![image](https://github.com/Ryankearns9/DigComm_final/blob/main/imgs/rocky_spectrum.png)
 
 ## PyRTLSDR
 To control the SDR and capture samples, PyRTLSDR was used. PyRTLSDR is an opensource library for controlling RTL-SDRs. Data was captured using this software and stored to text file for further processing. 
